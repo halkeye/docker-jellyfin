@@ -13,4 +13,5 @@ RUN DOCKER_ARCH=$(case ${TARGETPLATFORM:-linux/amd64} in \
   "linux/arm64")   echo "_linux_aarch64" ;; \
   *)               echo ""        ;; esac) \
   && echo "DOCKER_ARCH=$DOCKER_ARCH" \
-  && set -x && curl --fail -L https://github.com/yt-dlp/yt-dlp/releases/download/${YTDLP_VERSION}/yt-dlp${DOCKER_ARCH} -o /bin/yt-dlp && chmod a+rx /bin/yt-dlp
+  && set -x && curl --fail -L "https://github.com/yt-dlp/yt-dlp/releases/download/${YTDLP_VERSION}/yt-dlp${DOCKER_ARCH}" -o /bin/yt-dlp \
+  && chmod a+rx /bin/yt-dlp
