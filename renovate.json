@@ -7,11 +7,25 @@
     {
       "customType": "regex",
       "fileMatch": [
+        "^.github/workflows/build.yml$",
         "^Dockerfile$"
       ],
       "matchStrings": [
-        "https://github.com/(?<depName>.*?)/releases/(?<currentValue>.*?)/"
+        "upstream_version: \"v(?<currentValue>.*?)\"\\n",
+        "ARG UPSTREAM_VERSION=(?<currentValue>.*?)\\n"
       ],
+      "depNameTemplate": "jellyfin/jellyfin",
+      "datasourceTemplate": "github-releases"
+    },
+    {
+      "customType": "regex",
+      "fileMatch": [
+        "^Dockerfile$"
+      ],
+      "matchStrings": [
+        "ARG YTDLP_VERSION=(?<currentValue>.*?)\\n"
+      ],
+      "depNameTemplate": "yt-dlp/yt-dlp",
       "datasourceTemplate": "github-releases"
     }
   ]
