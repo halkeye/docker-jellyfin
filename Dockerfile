@@ -1,5 +1,4 @@
-ARG UPSTREAM_VERSION=10.9.11
-FROM ghcr.io/jellyfin/jellyfin:${UPSTREAM_VERSION}
+FROM ghcr.io/jellyfin/jellyfin:10.9.11
 ARG TARGETPLATFORM
 ARG YTDLP_VERSION=2024.08.06
 
