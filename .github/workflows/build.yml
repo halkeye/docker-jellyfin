@@ -14,7 +14,7 @@ jobs:
       contents: write
       packages: write
     with:
-      upstream_version: "v10.9.11"
+      upstream_version: "v10.10.0"
       upstream_repo: "https://github.com/jellyfin/jellyfin"
       run_number: "${{ github.run_number }}"
       username: "${{ github.repository_owner }}"
